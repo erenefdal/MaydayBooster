@@ -100,12 +100,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     // A. Power Button & Status Badge
     if (isSystemActive) {
       powerBtn.classList.add('active');
-      powerBtn.textContent = "SİSTEMİ DEVRE DIŞI BIRAK";
+      powerBtn.textContent = "DISABLE";
       statusBadge.classList.add('active');
       statusText.textContent = "ACTIVE";
     } else {
       powerBtn.classList.remove('active');
-      powerBtn.textContent = "SİSTEMİ AKTİF ET";
+      powerBtn.textContent = "ENABLE";
       statusBadge.classList.remove('active');
       statusText.textContent = "BYPASS";
     }
@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (response && response.success) {
           updateUI(true, currentDb);
         } else {
-          alert(response?.error || "Bu sekme yakalanamıyor. Sayfayı yenileyip tekrar deneyin.");
+          alert(response?.error || "Cannot capture this tab. Please refresh the page and try again.");
         }
       });
     }
